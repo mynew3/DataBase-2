@@ -1,9 +1,8 @@
 ---------------------------- Gilneas Phase 1 ------------------------------
 
+---------------------------- Gilneas spell area ------------------------------
 DELETE FROM `spell_area` WHERE `area` IN (4714,4725,4726,4727,4728,4729,4730,4731,4732,4733,4734,4735,4736,4755,4756,4757,4758,4759,4761,4762,4774,4786,4787,
 4788,4789,4790,4791,4792,4793,4794,4806,4807,4808,4810,4811,4817,4818,4841,4842,4858,4868,4869,5432,5720);
-
----------------------------- Gilneas spell area ------------------------------
 INSERT INTO `spell_area` (`spell`,`area`,`quest_start`,`quest_end`,`aura_spell`,`racemask`,`gender`,`autocast`,`quest_start_status`,`quest_end_status`) VALUES
 (59073,4714,0,0,0,0,2,0,0,0),
 (59073,4755,0,0,0,0,2,0,0,0),
@@ -92,7 +91,7 @@ UPDATE `creature` SET `PhaseGroup` = 368 WHERE `guid` = 314714; -- Slain Guard (
 
 SET @CGUID := 4000000;
 
-DELETE FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+125;
+DELETE FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+146;
 INSERT INTO creature (guid, id, map, spawnMask, PhaseID, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags) VALUES
 (@CGUID + 0, 39095, 654, 1, 170, 0, 1, -1686.365, 1381.307, 52.37962, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Slain Guard
 (@CGUID + 1, 39095, 654, 1, 170, 0, 1, -1701.415, 1378.955, 23.04241, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -218,7 +217,28 @@ INSERT INTO creature (guid, id, map, spawnMask, PhaseID, modelid, equipment_id, 
 (@CGUID + 122, 35232, 654, 1, 170, 0, 1, -1701.22, 1405.01, 21.752, 6.02139, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- creature_addon emote 333
 (@CGUID + 123, 35232, 654, 1, 170, 0, 1, -1685.98, 1409.07, 21.752, 4.64258, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- creature_addon emote 333
 (@CGUID + 124, 35232, 654, 1, 170, 0, 1, -1737.24, 1392.14, 19.9722, 0.837758, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- creature_addon emote 333
-(@CGUID + 125, 35232, 654, 1, 170, 0, 1, -1715.44, 1359.48, 19.9228, 5.21853, 60, 0, 0, 0, 0, 0, 0, 0, 0); -- creature_addon emote 333
+(@CGUID + 125, 35232, 654, 1, 170, 0, 1, -1715.44, 1359.48, 19.9228, 5.21853, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- creature_addon emote 333
+(@CGUID + 126, 35874, 654, 1, 170, 0, 1, -1670.313, 1297.233, 21.33171, 4.98176, 60, 0, 0, 0, 0, 0, 0, 0, 0), --  Huntsman Blake
+(@CGUID + 127, 38832, 654, 1, 170, 0, 0, -1669.259, 1299.177, 20.36763, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Baron
+(@CGUID + 128, 35869, 654, 1, 170, 0, 1, -1688.852, 1297.922, 20.3675, 1.605703, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Vitus Darkwalker
+(@CGUID + 129, 35871, 654, 1, 170, 0, 1, -1696.627, 1298.148, 20.36746, 2.234021, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Loren the Fence
+(@CGUID + 130, 47091, 654, 1, 170, 0, 1, -1682.102, 1312.526, 20.36353, 4.031711, 60, 0, 0, 1, 0, 0, 0, 0, 0), -- Wounded Guard
+(@CGUID + 131, 47091, 654, 1, 170, 0, 1, -1701.472, 1315.807, 20.37346, 5.602507, 60, 0, 0, 1, 0, 0, 0, 0, 0),
+(@CGUID + 132, 47091, 654, 1, 170, 0, 1, -1705.064, 1305.964, 19.86565, 0.2268928, 60, 0, 0, 1, 0, 0, 0, 0, 0),
+(@CGUID + 133, 47091, 654, 1, 170, 0, 1, -1701.379, 1301.646, 20.36758, 0.6457718, 60, 0, 0, 1, 0, 0, 0, 0, 0),
+(@CGUID + 134, 35912, 654, 1, 170, 0, 0, -1695.146, 1308.727, 19.86565, 4.014257, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Injured Citizen
+(@CGUID + 135, 35870, 654, 1, 170, 0, 1, -1695.432, 1306.851, 19.86565, 1.53589, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Sister Almyra
+(@CGUID + 136, 35873, 654, 1, 170, 0, 1, -1697.469, 1308.936, 19.86565, 6.143559, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Celestine of the Harvest
+(@CGUID + 137, 35872, 654, 1, 170, 0, 1, -1690.356, 1328.24, 16.33291, 1.448623, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Myriam Spellwaker
+(@CGUID + 138, 35839, 654, 1, 170, 0, 1, -1687.948, 1332.111, 15.2182, 1.343904, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Sergeant Cleese
+(@CGUID + 139, 35112, 654, 1, 170, 0, 0, -1767.661, 1347.892, 19.97346, 0.9773844, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- King Genn Greymane
+(@CGUID + 140, 35115, 654, 1, 170, 0, 1, -1767.094, 1352.62, 20.00146, 5.148721, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Lord Godfrey
+(@CGUID + 141, 50371, 654, 1, 170, 0, 1, -1755.069, 1418.04, 24.11409, 0.3490658, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Captain Broderick
+(@CGUID + 142, 35081, 654, 1, 170, 0, 0, -1682.167, 1439.67, 52.37046, 0.8377581, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Sean Dempsey
+(@CGUID + 143, 35077, 654, 1, 170, 0, 0, -1679.734, 1442.122, 52.37046, 0.7504916, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Lord Darius Crowley
+(@CGUID + 144, 35123, 654, 1, 170, 0, 0, -1682.8, 1441.262, 52.37046, 5.480334, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Vincent Hersham
+(@CGUID + 145, 35124, 654, 1, 170, 0, 1, -1678.51, 1438.786, 52.37044, 0.07367558, 60, 0, 0, 0, 0, 0, 0, 0, 0), -- Tobias Mistmantle
+(@CGUID + 146, 35369, 654, 1, 170, 0, 0, -1813.616, 1428.318, 12.54652, 3.857178, 60, 0, 0, 0, 0, 0, 0, 0, 0); -- Josiah Avery
 
 DELETE FROM `creature_queststarter` WHERE `id` = 34884; -- remove quest qiver flag
 UPDATE `gameobject` SET `PhaseGroup` = 368 WHERE `map` = 654;
@@ -237,18 +257,43 @@ INSERT INTO `creature_addon` (`guid`, `emote`) VALUES
 (@CGUID + 124, 333),
 (@CGUID + 125, 333);
 
-DELETE FROM `creature_template_addon` WHERE `entry` IN (34936, 34913, 35840);
+DELETE FROM `creature_template_addon` WHERE `entry` IN (34936, 34913, 35840, 35874, 35869, 35871, 35873, 35839, 35112, 35115, 50371, 35077, 35124, 35369);
 INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `aiAnimKit`, `movementAnimKit`, `meleeAnimKit`, `auras`) VALUES
 (34936, 0, 0, 65536, 375, 0, 0, 0, 0, '49414'),
 (34913, 0, 2410, 0, 0, 0, 0, 0, 0, ''),
-(35840, 0, 0, 0, 0, 0, 0, 0, 0, '49415');
+(35840, 0, 0, 0, 0, 0, 0, 0, 0, '49415'),
+(35874, 0, 0, 0, 0, 214, 0, 0, 0, ''),
+(35869, 0, 0, 0, 0, 0, 0, 0, 0, '45104'),
+(35871, 0, 0, 0, 0, 433, 0, 0, 0, '34189'),
+(35873, 0, 0, 0, 0, 0, 0, 0, 0, '13236'),
+(35839, 0, 0, 0, 0, 0, 0, 0, 0, '43264'),
+(35112 , 0, 2410, 0, 0, 0, 0, 0, 0, ''),
+(35115, 0, 2410, 0, 0, 0, 0, 0, 0, ''),
+(50371, 0, 0, 0, 0, 333, 0, 0, 0, ''),
+(35077, 0, 0, 0, 0, 27, 0, 0, 0, '67503'),
+(35124, 0, 0, 0, 0, 375, 0, 0, 0, ''),
+(35369, 0, 0, 0, 0, 431, 0, 0, 0, '');
 
-DELETE FROM `gossip_menu` WHERE `entry` IN (11070, 10676); 
+DELETE FROM `gossip_menu` WHERE `entry` IN (11070, 10676, 10697, 10702, 10699, 10700, 10696, 10698, 10694); 
 INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES
 (11070, 15395),
-(10676, 14798);
+(10676, 14798),
+(10697, 14839),
+(10697, 14840),
+(10702, 14847),
+(10702, 14848),
+(10699, 14842),
+(10699, 14843),
+(10700, 14844),
+(10700, 14845),
+(10696, 14834),
+(10696, 14836),
+(10698, 14840),
+(10698, 14841),
+(10694, 14831),
+(10694, 14832);
 
-DELETE FROM `creature_text` WHERE `entry` IN (34913, 35836);
+DELETE FROM `creature_text` WHERE `entry` IN (34913, 35836, 35112, 35115, 35369, 50415);
 INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `BroadcastTextId`, `comment`) VALUES
 (34913, 1, 1, 'Stand your ground, men!', 14, 0, 100, 0, 0, 19617, 35166, ''),
 (34913, 1, 2, 'Defeat these foul beasts!', 14, 0, 100, 0, 0, 19618, 35167, ''),
@@ -261,9 +306,19 @@ INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language
 (35836, 1, 4, 'Help!', 14, 0, 100, 430, 0, 0, 36040, ''),
 (35836, 1, 5, 'Help me please!', 14, 0, 100, 430, 0, 0, 0, ''),
 (35836, 1, 6, 'Please save me!', 14, 0, 100, 430, 0, 0, 0, ''),
-(35836, 1, 7, 'One of them is right behind me!', 14, 0, 100, 430, 0, 0, 0, '');
+(35836, 1, 7, 'One of them is right behind me!', 14, 0, 100, 430, 0, 0, 0, ''),
+(35112, 1, 0, 'Enough! I''ve made up my mind. We need Crowley on our side.', 12, 0, 100, 0, 0, 0, 38602, ''),
+(35115, 1, 0, 'We ought to leave Crowley in prison with those beasts!', 12, 0, 100, 0, 0, 0, 38601, ''),
+(35369, 1, 1, 'I can''t fight it!', 14, 0, 100, 0, 0, 0, 38741, ''),
+(35369, 1, 2, 'Make it stop!', 14, 0, 100, 0, 0, 0, 38740, ''),
+(35369, 1, 3, 'My face! What''s wrong with my face!', 14, 0, 100, 0, 0, 0, 38737, ''),
+(35369, 1, 4, 'My hands... don''t look at my hands!!', 14, 0, 100, 0, 0, 0, 38738, ''),
+(35369, 1, 5, 'The pain is unbearable!', 14, 0, 100, 0, 0, 0, 38739, ''),
+(35369, 1, 6, 'What''s wrong with me??!', 14, 0, 100, 0, 0, 0, 0, ''),
+(50415, 1, 0, 'You''ve been bitten by a worgen. It''s probably nothing, but it sure stings a little.$B$B|TInterface\\Icons\\INV_Misc_monsterfang_02.blp:32|t', 41, 0, 100, 0, 0, 0, 0, '');
 
 DELETE FROM `creature_text` WHERE `entry` IN (35118, 47091);
 INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
 (35118, 1, 0, "%s becomes enraged!", 16, 0, 100, 0, 0, 0, "Bloodfang Worgen - combat Enrage");
 
+---------------------------- Gilneas Phase 3 ------------------------------
